@@ -17,6 +17,9 @@
             icon: {
                 type: String
             },
+            icons:{
+                type:String
+            },
             disabled: {
                 type: Boolean,
                 default: false
@@ -47,6 +50,9 @@
                 this.updateNav();
             },
             icon () {
+                this.updateNav();
+            },
+            icons() {
                 this.updateNav();
             },
             disabled () {

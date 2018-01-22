@@ -10,6 +10,7 @@
                         <div ref="nav" :class="[prefixCls + '-nav']" class="nav-text"  :style="navStyle">
                             <div :class="barClasses" :style="barStyle"></div>
                             <div :class="tabCls(item)" v-for="(item, index) in navList" @click="handleChange(index)">
+                                <i v-if="item.icons !== ''"  class="iconfont" :class="item.icons"></i>
                                 <Icon v-if="item.icon !== ''" :type="item.icon"></Icon>
                                 <Render v-if="item.labelType === 'function'" :render="item.label"></Render>
                                 <template v-else>{{ item.label }}</template>
@@ -140,6 +141,7 @@
                         labelType: typeof pane.label,
                         label: pane.label,
                         icon: pane.icon || '',
+                        icons:pane.icons||'',
                         name: pane.currentName || index,
                         disabled: pane.disabled,
                         closable: pane.closable
